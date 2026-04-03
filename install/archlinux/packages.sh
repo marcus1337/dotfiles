@@ -6,6 +6,7 @@ required=(
   tmux
   gvim
   neovim
+  zsh
   wl-clipboard
 )
 
@@ -20,10 +21,17 @@ cli_tools=(
   tldr
   broot
   stow
+  lazygit
 )
 
 optional=(
   docker
+  curl
+  wget
+  npm
+  python
+  cmake
+  gcc
 )
 
 sudo pacman -Syu --noconfirm --needed "${required[@]}" "${cli_tools[@]}" "${optional[@]}"
