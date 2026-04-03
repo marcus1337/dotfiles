@@ -22,6 +22,8 @@ cli_tools=(
   broot
   stow
   lazygit
+  glow
+  watchexec
 )
 
 optional=(
@@ -32,6 +34,13 @@ optional=(
   python
   cmake
   gcc
+  ttf-jetbrains-mono-nerd
+  noto-fonts
+  noto-fonts-emoji
+  noto-fonts-cjk
+  python-pipx
 )
 
 sudo pacman -Syu --noconfirm --needed "${required[@]}" "${cli_tools[@]}" "${optional[@]}"
+fc-cache -fv
+

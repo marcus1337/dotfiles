@@ -23,12 +23,3 @@ broot --set-install-state installed
 
 ln -sfn "$zshrc_src" "$zshrc_dst"
 
-if command -v zsh >/dev/null 2>&1; then
-  zsh_path="$(command -v zsh)"
-  current_shell="$(getent passwd "$USER" | cut -d: -f7)"
-  if [ "$current_shell" != "$zsh_path" ]; then
-    chsh -s "$zsh_path"
-  fi
-fi
-
-

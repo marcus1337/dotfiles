@@ -16,6 +16,11 @@ eval "$(zoxide init zsh)"
 alias bsh='bat --style=header --language=sh --paging=never'
 alias ba='bat --style=header --paging=never'
 
+unalias readme 2>/dev/null
+readme() {
+  watchexec -c -e md -- glow "${1:-README.md}"
+}
+
 export EDITOR=vim
 export VISUAL=vim
 export SYSTEMD_EDITOR=vim
@@ -24,4 +29,6 @@ if [ -f "$EMSDK_DIR/emsdk_env.sh" ]; then
   export EMSDK_QUIET=1
   source "$EMSDK_DIR/emsdk_env.sh" >/dev/null
 fi
+
+export PATH="$HOME/.local/bin:$PATH"
 
