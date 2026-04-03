@@ -9,7 +9,6 @@ tpm="$plugins/tpm"
 conf="$cfg/tmux.conf"
 
 mkdir -p "$(dirname "$cfg")" "$plugins"
-ln -sfn "$root/tmux" "$cfg"
 [ -d "$tpm" ] || git clone https://github.com/tmux-plugins/tpm "$tpm"
 tmux source-file "$conf" 2>/dev/null || true
 [ -x "$tpm/bin/install_plugins" ] && "$tpm/bin/install_plugins"

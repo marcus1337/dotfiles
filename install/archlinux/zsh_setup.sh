@@ -21,5 +21,4 @@ broot --print-shell-function zsh > "$broot_launcher"
 chmod 644 "$broot_launcher"
 broot --set-install-state installed
 
-ln -sfn "$zshrc_src" "$zshrc_dst"
 
