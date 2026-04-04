@@ -1,21 +1,12 @@
-" Enable line numbers
-set number
-
-" Enable mouse support in all modes
-set mouse=a
-
-" Use system clipboard for all yank, delete, change and put operations
-set clipboard=unnamedplus
-
-" Enable syntax highlighting
+set nocompatible
+filetype plugin on
 syntax on
 
-" Set a color scheme (requires it to be installed)
+set number
+set mouse=a
+set clipboard=unnamedplus
 colorscheme habamax
-
-" Set a dark background
 set background=dark
-
 set scrolloff=5        " Keep 5 lines above/below cursor when scrolling
 set sidescrolloff=5    " Same, but horizontally
 set nowrap             " Don’t wrap long lines
@@ -29,6 +20,13 @@ set autoread           " Auto-reload file if changed outside Vim
 set hidden             " Allow switching buffers without saving
 set backup             " Enable backup files
 set undofile           " Persistent undo (needs `set undodir=...`)
-
 set hlsearch
+
+" plugin settings
+let g:vimwiki_list = [{
+      \ 'path': '~/vimwiki/',
+      \ 'syntax': 'markdown',
+      \ 'ext': 'md'
+      \ }]
+let g:vimwiki_global_ext = 0
 
