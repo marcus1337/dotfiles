@@ -24,6 +24,7 @@ cli_tools=(
   lazygit
   glow
   watchexec
+  mdbook
 )
 
 optional=(
