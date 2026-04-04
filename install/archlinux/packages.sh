@@ -25,6 +25,7 @@ cli_tools=(
   glow
   watchexec
   mdbook
+  pandoc
 )
 
 optional=(
