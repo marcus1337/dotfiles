@@ -15,9 +15,11 @@ mkdir -p "$plugins"
   exit 1
 }
 
-tmux start-server
+session="setup-tmux"
+tmux has-session -t "$session" 2>/dev/null || tmux new-session -d -s "$session"
 tmux source-file "$conf"
 [ -x "$tpm/bin/install_plugins" ] && "$tpm/bin/install_plugins"
+tmux kill-session -t "$session" 2>/dev/null || true
 
 rm -f "$HOME/.tmux.conf" "$HOME/.tmux.conf.local"
 rm -rf "$HOME/.tmux"
