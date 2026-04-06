@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal dotfiles for Arch Linux and related setups.
+Personal dotfiles for Arch Linux and related setups. Built with ChatGPT.
 
 ## Structure
 
@@ -23,3 +23,6 @@ Personal dotfiles for Arch Linux and related setups.
 - `sway` — window manager / compositor
 - `fuzzel` — launcher
 - `dmenu` — optional launcher
+
+
+
