@@ -218,22 +218,22 @@ include /etc/sway/config.d/*
 exec udiskie -A -n --no-tray
 
 ### Dark minimal tabbed look
-font pango:Iosevka Term 6
-title_align left
-titlebar_border_thickness 2
-titlebar_padding 2 2
-
+font pango:Iosevka Term 5
+title_align center
+titlebar_border_thickness 0
+titlebar_padding 2 1
+for_window [all] title_format "●"
 default_border pixel 2
 #smart_borders on
 #hide_edge_borders --i3 smart
 
 # focused                 border   bg       text     indicator child_border
-client.focused            #252525  #1b1f27  #e6e9ef  #303030  #252525
-client.focused_inactive   #191919  #161a22  #aeb6c3  #191919  #191919
-client.focused_tab_title  #22262f  #22262f  #e6e9ef
-client.unfocused          #101010  #111318  #7f8794  #101010  #101010
-client.urgent             #5c2a33  #5c2a33  #ffffff  #5c2a33  #5c2a33
-client.placeholder        #000000  #0c0c0c  #ffffff  #000000  #0c0c0c
+client.focused            #282828  #242424    #dddddd  #282828   #252525
+client.focused_tab_title  #282828  #242424    #dddddd
+client.urgent             #5c2a33  #5c2a33    #ffffff  #5c2a33   #5c2a33
+client.placeholder        #000000  #0c0c0c    #ffffff  #000000   #0c0c0c
+client.focused_inactive   #171717  #171717    #171717  #171717   #191919
+client.unfocused          #101010  #101010    #101010  #101010   #101010
 
 output DP-6 pos 0 0
 output DP-5 pos 2500 0
