@@ -148,9 +148,14 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
+
+# Main monitor: workspaces + i3status + tray icons
 bar {
+    id main
+    output DP-6
     position top
     status_command i3status
+    tray_output DP-6
 
     colors {
         background         #111318
@@ -163,6 +168,26 @@ bar {
         urgent_workspace   #3a1f24 #5c2a33 #ffffff
     }
 }
+
+# Secondary monitor: workspace buttons only
+bar {
+    id secondary
+    output DP-5
+    position top
+    tray_output none
+
+    colors {
+        background         #111318
+        statusline         #cdd6f4
+        separator          #2a2f3a
+
+        focused_workspace  #2a2f3a #1b1f27 #e6e9ef
+        active_workspace   #2a2f3a #161a22 #bfc7d5
+        inactive_workspace #111318 #111318 #7f8794
+        urgent_workspace   #3a1f24 #5c2a33 #ffffff
+    }
+}
+
 
 include /etc/sway/config.d/*
 
@@ -191,3 +216,14 @@ output DP-6 pos 0 0
 output DP-5 pos 2500 0
 bindsym $mod+Shift+m mouse_warping output
 bindsym $mod+Ctrl+m mouse_warping none
+
+
+input "1133:16529:Logitech_Wireless_Mouse" {
+    natural_scroll disabled
+    scroll_factor 0.8
+    accel_profile flat
+    pointer_accel 0.2
+}
+
+# dim monitor after 300 sec
+exec swayidle -w timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
